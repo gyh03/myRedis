@@ -37,11 +37,10 @@ public class SpringClusterRedis {
 		//删除某个键
 		redisCluster.del("name"); 
 		System.out.println(redisCluster.get("name"));
-		//设置多个键值对
-		redisCluster.mset("name","gyh","age","27","qq","123456");
+		//设置多个键值对--->集群环境不能批量设置？？，找不到槽
+		redisCluster.mset("age","26","sex","女");
 		redisCluster.incr("age"); //进行加1操作
 		System.out.println(redisCluster.get("name") + "-" + redisCluster.get("age") + "-" + redisCluster.get("qq"));	
-		redisCluster.save();
 
 	}
 
@@ -50,7 +49,7 @@ public class SpringClusterRedis {
 	public  void testHash(){
 		//向myMap集合中添加一组k/v
 		redisCluster.hset("myMap", "name", "gyh"); 
-		Map<String,String> myMap = new HashMap<>();
+		Map<String,String> myMap = new HashMap<String,String>();
 		myMap.put("age", "26");
 		myMap.put("sex", "女");
 		//批量添加数据

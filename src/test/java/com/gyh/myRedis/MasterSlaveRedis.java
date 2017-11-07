@@ -90,7 +90,7 @@ public class MasterSlaveRedis {
 	public  void testHash(){
 		//向myMap集合中添加一组k/v
 		jedis.hset("myMap", "name", "gyh"); 
-		Map<String,String> myMap = new HashMap<>();
+		Map<String,String> myMap = new HashMap<String,String>();
 		myMap.put("age", "26");
 		myMap.put("sex", "女");
 		//批量添加数据

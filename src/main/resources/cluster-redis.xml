@@ -4,9 +4,13 @@
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:util="http://www.springframework.org/schema/util"
 	xsi:schemaLocation="  
             http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  
-            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+            http://www.springframework.org/schema/util
+            http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+	
 	<!-- 连接池的配置 -->
 	<bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
 		<property name="maxIdle" value="${redis.maxIdle}" />
@@ -34,7 +38,6 @@
 	<bean id="hostport5" class="redis.clients.jedis.HostAndPort">
 		<constructor-arg name="host" value="${redis.cluster.host4}"></constructor-arg>
 		<constructor-arg name="port" value="${redis.cluster.port4}"></constructor-arg>
-		>
 	</bean>
 	<bean id="hostport6" class="redis.clients.jedis.HostAndPort">
 		<constructor-arg name="host" value="${redis.cluster.host5}"></constructor-arg>

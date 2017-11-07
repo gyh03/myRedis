@@ -17,12 +17,12 @@ public class ClusterRedis {
 	public static void main(String[] args) {
 	    
 	    Set<HostAndPort> jedisClusterNode = new HashSet<HostAndPort>();
-	    jedisClusterNode.add(new HostAndPort("192.168.59.128", 7000));
-	    jedisClusterNode.add(new HostAndPort("192.168.59.128", 7001));
-	    jedisClusterNode.add(new HostAndPort("192.168.59.128", 7002));
-	    jedisClusterNode.add(new HostAndPort("192.168.59.128", 7003));
-	    jedisClusterNode.add(new HostAndPort("192.168.59.128", 7004));
-	    jedisClusterNode.add(new HostAndPort("192.168.59.128", 7005));
+	    jedisClusterNode.add(new HostAndPort("192.168.252.128", 7000));
+	    jedisClusterNode.add(new HostAndPort("192.168.252.128", 7001));
+	    jedisClusterNode.add(new HostAndPort("192.168.252.128", 7002));
+	    jedisClusterNode.add(new HostAndPort("192.168.252.129", 7003));
+	    jedisClusterNode.add(new HostAndPort("192.168.252.129", 7004));
+	    jedisClusterNode.add(new HostAndPort("192.168.252.129", 7005));
 	    //GenericObjectPoolConfig goConfig = new GenericObjectPoolConfig();
 	    //JedisCluster jc = new JedisCluster(jedisClusterNode,2000,100, goConfig);
 	    JedisPoolConfig cfg = new JedisPoolConfig();

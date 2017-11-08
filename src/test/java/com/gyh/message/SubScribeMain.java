@@ -9,10 +9,10 @@ import redis.clients.jedis.HostAndPort;
 import redis.clients.jedis.JedisCluster;
 import redis.clients.jedis.JedisPoolConfig;
 
-import com.gyh.publish.ChatSubscribe;
+import com.gyh.message.ChatSubscribe;
 /**
  * @author gyh
- * main方法测试订阅消息
+ * main鏂规硶娴嬭瘯璁㈤槄娑堟伅
  */
 public class SubScribeMain {
 	private static  JedisCluster jc;
@@ -42,9 +42,9 @@ public class SubScribeMain {
 	}
 
 	/**
-	 * 订阅频道
+	 * 璁㈤槄棰戦亾
 	 *
-	 * @param channel          频道
+	 * @param channel          棰戦亾
 	 * @param roomSubListerner
 	 */
 	public static void subscribeChannel(final String channel, final ChatSubscribe roomSubListerner) {

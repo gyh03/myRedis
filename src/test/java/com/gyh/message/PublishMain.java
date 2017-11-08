@@ -9,7 +9,7 @@ import redis.clients.jedis.JedisPoolConfig;
 
 /**
  * @author gyh
- * main方法测试发布消息
+ * main鏂规硶娴嬭瘯鍙戝竷娑堟伅
  */
 public class PublishMain {
 	private static  JedisCluster jc;
@@ -34,21 +34,21 @@ public class PublishMain {
 
 	public static void main(String[] args) {
 		final String  channel = "cctv1";
-		sendMessage(channel, "新闻联播");
+		sendMessage(channel, "鏂伴椈鑱旀挱");
 	}
 
 	/**
-	 * 发布消息
+	 * 鍙戝竷娑堟伅
 	 *
-	 * @param channel 频道
-	 * @param message 信息
+	 * @param channel 棰戦亾
+	 * @param message 淇℃伅
 	 */
 	public static void sendMessage(final String channel, final String message) {
 	    Thread thread = new Thread(() -> {
 			Long publish = jc.publish(channel, message);
-	        System.out.println(String.format("服务器在: {%s} 频道发布消息{%s} - {%s}", channel, message, publish));
+	        System.out.println(String.format("鏈嶅姟鍣ㄥ湪: {%s} 棰戦亾鍙戝竷娑堟伅{%s} - {%s}", channel, message, publish));
 	    });
-	    System.out.println("发布线程启动:");
+	    System.out.println("鍙戝竷绾跨▼鍚姩:");
 	    thread.setName("publishThread");
 	    thread.start();
 	}

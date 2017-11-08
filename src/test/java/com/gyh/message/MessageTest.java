@@ -8,7 +8,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
  * @author gyh
- * 发布订阅消息
+ * 鍙戝竷璁㈤槄娑堟伅
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring-mvc.xml"})  

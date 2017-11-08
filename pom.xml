@@ -16,7 +16,7 @@
 	</properties>
 
 	<dependencies>
-		<!-- junit -->
+		<!-- junit4 -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -35,6 +35,16 @@
 			<version>3.2.3.RELEASE</version>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- jedis -->
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>2.9.0</version>
+		</dependency>
+		<!--1.7.2 开始支持Redis 集群 -->
+		<!-- <dependency> <groupId>org.springframework.data</groupId> <artifactId>spring-data-redis</artifactId> 
+			<version>1.7.2.RELEASE</version> </dependency> -->
 
 		<!-- Spring dependencies -->
 		<dependency>
@@ -55,24 +65,29 @@
 			<version>${spring.version}</version>
 		</dependency>
 
-		<!-- jedis -->
+		<!-- log4j -->
 		<dependency>
-			<groupId>redis.clients</groupId>
-			<artifactId>jedis</artifactId>
-			<version>2.9.0</version>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.7</version>
 		</dependency>
-		<!--1.7.2 开始支持Redis 集群 -->
-		<!-- <dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-redis</artifactId>
-			<version>1.7.2.RELEASE</version>
-		</dependency> -->
-		
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.7</version>
+		</dependency>
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
 		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+
 
 	</dependencies>
 
@@ -83,6 +98,9 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
 				<!-- <version>2.1.2</version> -->
+				<configuration>
+					<skip>true</skip>
+				</configuration>
 				<executions>
 					<execution>
 						<id>attach-sources</id>
